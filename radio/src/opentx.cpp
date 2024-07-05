@@ -1348,8 +1348,9 @@ void edgeTxInit()
   ViewMain::instance();
 #elif defined(GUI)
   // TODO add a function for this (duplicated)
-  menuHandlers[0] = menuMainView;
-  menuHandlers[1] = menuModelSelect;
+  menuHandlers[0] = menuViewTelemetry;
+  menuHandlers[1] = menuMainView;
+  menuHandlers[2] = menuModelSelect;
 #endif
 
   switchInit();

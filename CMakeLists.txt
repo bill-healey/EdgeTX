@@ -18,7 +18,7 @@ else()
   if(DEFINED ENV{EDGETX_VERSION_SUFFIX})
     set(VERSION_SUFFIX "$ENV{EDGETX_VERSION_SUFFIX}")
   else()
-    set(VERSION_SUFFIX "selfbuild") # If not defined, set suffix to selfbuild
+    set(VERSION_SUFFIX "bill") # If not defined, set suffix to selfbuild
   endif()
 endif()
 
