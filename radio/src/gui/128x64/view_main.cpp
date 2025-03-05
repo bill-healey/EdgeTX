@@ -332,12 +332,17 @@ void menuMainView(event_t event)
 {
   uint8_t view = g_eeGeneral.view;
   uint8_t view_base = view & 0x0f;
+  static bool defaultToTelemetryView = true;
 
   switch (event) {
     case EVT_ENTRY:
       killEvents(KEY_EXIT);
       killEvents(KEY_UP);
       killEvents(KEY_DOWN);
+      if (defaultToTelemetryView) {
+				defaultToTelemetryView = false;
+				chainMenu(menuViewTelemetry);
+				return;
       break;
 
       /* TODO if timer2 is OFF, it's possible to use this timer2 as in er9x...
