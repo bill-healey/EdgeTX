@@ -339,10 +339,6 @@ void menuMainView(event_t event)
       killEvents(KEY_EXIT);
       killEvents(KEY_UP);
       killEvents(KEY_DOWN);
-      if (defaultToTelemetryView) {
-				defaultToTelemetryView = false;
-				chainMenu(menuViewTelemetry);
-				return;
       break;
 
       /* TODO if timer2 is OFF, it's possible to use this timer2 as in er9x...
@@ -428,6 +424,11 @@ void menuMainView(event_t event)
       }
 #endif
       break;
+  }
+
+  if (defaultToTelemetryView) {
+    defaultToTelemetryView = false;
+    chainMenu(menuViewTelemetry);
   }
 
   switch (view_base) {
